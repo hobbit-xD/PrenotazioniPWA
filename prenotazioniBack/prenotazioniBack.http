@@ -1,0 +1,6 @@
+@prenotazioniBack_HostAddress = http://localhost:5082
+
+GET {{prenotazioniBack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
