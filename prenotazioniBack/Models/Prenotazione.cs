@@ -15,10 +15,10 @@ namespace prenotazioniBack.Models
         public DateTime FinePrenotazione { get; set; }
         public string NumeroPrenotazione { get; set; } = Guid.NewGuid().ToString("N").ToUpper();
         [Required]
-        public bool IsConfermata { get; set; }
+        public bool IsConfermata { get; set; } = true;
         [Required]
-        public DateTime DataInserimento { get; set; }
+        public DateTime DataInserimento { get; set; } = DateTime.Now;
         [Required]
-        public DateTime DataModifica { get; set; }
+        public DateTime DataModifica { get; set; } = DateTime.Now;
     }
 }

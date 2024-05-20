@@ -11,13 +11,5 @@ namespace prenotazioniBack.Dtos
         public DateTime InizioPrenotazione { get; set; }
         [Required]
         public DateTime FinePrenotazione { get; set; }
-        //      [Required]
-        //       public int NumeroPrenotazione { get; set; }
-        [Required]
-        public bool IsConfermata { get; set; }
-        [Required]
-        public DateTime DataInserimento { get; set; }
-        [Required]
-        public DateTime DataModifica { get; set; }
     }
 }
