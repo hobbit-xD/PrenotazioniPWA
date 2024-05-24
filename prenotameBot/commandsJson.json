@@ -1,0 +1,26 @@
+[
+    {
+        "Command": "/help",
+        "Description": "Informazioni utili"
+    },
+    {
+        "Command": "/book",
+        "Description": "Nuova prenotazione"
+    },
+    {
+        "Command": "/list",
+        "Description": "Lista prenotazioni"
+    },
+    {
+        "Command": "/remove",
+        "Description": "Cancella prenotazione"
+    },
+    {
+        "Command": "/modify",
+        "Description": "Modifica prenotazione"
+    },
+    {
+        "Command": "/cancel",
+        "Description": "Annula comando"
+    }
+]
