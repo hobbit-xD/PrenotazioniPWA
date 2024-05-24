@@ -40,7 +40,7 @@ ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
 };
 
 
-var bot = new TelegramBotClient("6620766124:AAFm3ZCB640p7bJ3doOyv4zZQUSdYTx2hxo");
+var bot = new TelegramBotClient("");
 string json = System.IO.File.ReadAllText("commandsJson.json");
 
 List<BotCommand> commands = JsonConvert.DeserializeObject<List<BotCommand>>(json)!;
