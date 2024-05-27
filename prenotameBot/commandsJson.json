@@ -16,11 +16,7 @@
         "Description": "Cancella prenotazione"
     },
     {
-        "Command": "/modify",
-        "Description": "Modifica prenotazione"
-    },
-    {
         "Command": "/cancel",
-        "Description": "Annula comando"
+        "Description": "Annulla comando"
     }
 ]

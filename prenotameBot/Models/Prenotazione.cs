@@ -1,4 +1,4 @@
-namespace prenotameBot
+namespace prenotameBot.Models
 {
     public class Prenotazione
     {
