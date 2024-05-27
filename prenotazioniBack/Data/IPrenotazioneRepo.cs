@@ -9,6 +9,6 @@ namespace prenotazioniBack.Data
         Task<IEnumerable<Prenotazione>> GetAllPrenotazioni();
         Task CreatePrenotazione(Prenotazione cmd);
         void DeletePrenotazione(Prenotazione cmd);
-
+        Task<IEnumerable<Prenotazione>> GetPrenotazioniByDate(string dataInizio);
     }
 }

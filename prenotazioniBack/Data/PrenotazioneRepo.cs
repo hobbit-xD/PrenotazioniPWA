@@ -1,3 +1,4 @@
+using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 using prenotazioniBack.Models;
 
@@ -40,6 +41,12 @@ namespace prenotazioniBack.Data
         public async Task<Prenotazione?> GetPrenotazioneById(int id)
         {
             return await _context.Prenotazioni.FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public async Task<IEnumerable<Prenotazione>> GetPrenotazioniByDate(string data)
+        {
+            Console.WriteLine(DateTime.ParseExact(data,"d", new CultureInfo("it-IT")));
+            return await _context.Prenotazioni.Where(p =>  p.InizioPrenotazione.Date == DateTime.Parse(data).Date).ToListAsync();
         }
 
         public async Task SaveChanges()

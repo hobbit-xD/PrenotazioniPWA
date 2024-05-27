@@ -47,6 +47,17 @@ app.MapGet("api/v1/commands/{id}", async (IPrenotazioneRepo repo, IMapper mapper
     return Results.NotFound();
 });
 
+app.MapGet("api/v1/commands/search", async (IPrenotazioneRepo repo, IMapper mapper, string DataInizio) =>
+{
+    var commands = await repo.GetPrenotazioniByDate(DataInizio);
+    if (commands != null)
+        return Results.Ok(mapper.Map<IEnumerable<PrenotazioneReadDto>>(commands));
+
+    return Results.NotFound();
+});
+
+
+
 app.MapPost("api/v1/commands", async (IPrenotazioneRepo repo, IMapper mapper, [FromBody] PrenotazioneCreateDto cmdCreateDto) =>
 {
     var commandModel = mapper.Map<Prenotazione>(cmdCreateDto);

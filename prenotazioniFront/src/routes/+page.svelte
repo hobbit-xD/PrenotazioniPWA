@@ -11,7 +11,7 @@
 
 <form method="post" class="mt-2">
 	<label class="block">
-		<span class=" text-sm font-medium">Nome Prenotazione: </span>
+		<span class=" text-sm font-medium">Nome Prenotazione:</span>
 		<input
 			type="text"
 			class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400"
@@ -21,7 +21,7 @@
 		/>
 	</label>
 	<label class="block">
-		<span class=" text-sm font-medium">Data Inizio: </span>
+		<span class=" text-sm font-medium">Data Inizio:</span>
 		<input
 			type="datetime-local"
 			class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400"
