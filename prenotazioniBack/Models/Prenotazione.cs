@@ -20,5 +20,6 @@ namespace prenotazioniBack.Models
         public DateTime DataInserimento { get; set; } = DateTime.Now;
         [Required]
         public DateTime DataModifica { get; set; } = DateTime.Now;
+        public long? TelegramUserId { get; set; }
     }
 }

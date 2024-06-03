@@ -38,16 +38,16 @@ app.MapGet("api/v1/commands", async (IPrenotazioneRepo repo, IMapper mapper) =>
     return Results.Ok(mapper.Map<IEnumerable<PrenotazioneReadDto>>(commands));
 });
 
-app.MapGet("api/v1/commands/{id}", async (IPrenotazioneRepo repo, IMapper mapper, [FromRoute] int id) =>
+app.MapGet("api/v1/commands/{UserId}", async (IPrenotazioneRepo repo, IMapper mapper, [FromRoute] long UserId) =>
 {
-    var command = await repo.GetPrenotazioneById(id);
-    if (command != null)
-        return Results.Ok(mapper.Map<Prenotazione>(command));
+    var commands = await repo.GetPrenotazioneByUser(UserId);
+    if (commands != null)
+        return Results.Ok(mapper.Map<IEnumerable<PrenotazioneReadDto>>(commands));
 
     return Results.NotFound();
 });
 
-app.MapGet("api/v1/commands/search", async (IPrenotazioneRepo repo, IMapper mapper, string DataInizio) =>
+app.MapGet("api/v1/commands/search", async (IPrenotazioneRepo repo, IMapper mapper, string DataInizio ) =>
 {
     var commands = await repo.GetPrenotazioniByDate(DataInizio);
     if (commands != null)

@@ -6,6 +6,7 @@ namespace prenotazioniBack.Data
     {
         Task SaveChanges();
         Task<Prenotazione?> GetPrenotazioneById(int id);
+        Task<IEnumerable<Prenotazione?>> GetPrenotazioneByUser(long UserId);
         Task<IEnumerable<Prenotazione>> GetAllPrenotazioni();
         Task CreatePrenotazione(Prenotazione cmd);
         void DeletePrenotazione(Prenotazione cmd);

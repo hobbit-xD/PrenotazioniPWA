@@ -43,10 +43,15 @@ namespace prenotazioniBack.Data
             return await _context.Prenotazioni.FirstOrDefaultAsync(c => c.Id == id);
         }
 
+        public async Task<IEnumerable<Prenotazione?>> GetPrenotazioneByUser(long UserId)
+        {
+            return await _context.Prenotazioni.Where(c => c.TelegramUserId == UserId).ToListAsync();
+        }
+
         public async Task<IEnumerable<Prenotazione>> GetPrenotazioniByDate(string data)
         {
-            Console.WriteLine(DateTime.ParseExact(data,"d", new CultureInfo("it-IT")));
-            return await _context.Prenotazioni.Where(p =>  p.InizioPrenotazione.Date == DateTime.Parse(data).Date).ToListAsync();
+            Console.WriteLine(DateTime.ParseExact(data, "d", new CultureInfo("it-IT")));
+            return await _context.Prenotazioni.Where(p => p.InizioPrenotazione.Date == DateTime.Parse(data).Date).ToListAsync();
         }
 
         public async Task SaveChanges()
