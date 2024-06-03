@@ -27,21 +27,31 @@ namespace prenotameBot.SyncDataServices.Http
             return jsonResponse;
         }
 
-        public async Task SendPrenotazione(PrenotazioneCreate prenotazione)
+        public async Task<string> GetPrenotazioniByUser(long UserId)
+        {
+            HttpResponseMessage response = await _client.GetAsync($"commands/{UserId}");
+            string jsonResponse = await response.Content.ReadAsStringAsync();
+            return jsonResponse;
+        }
+
+        public async Task<bool> SendPrenotazione(PrenotazioneCreate prenotazione)
         {
             StringContent httpContent = new StringContent(
              JsonSerializer.Serialize(prenotazione), Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await _client.PostAsync("commands", httpContent);
 
-            if (response.IsSuccessStatusCode)
-            {
-                Console.WriteLine("Post done");
-            }
-            else
-            {
-                Console.WriteLine("Post fail");
-            }
+            Console.WriteLine(response);
+
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> DeletePrenotazioni(string id)
+        {
+            HttpResponseMessage response = await _client.DeleteAsync($"commands/{id}");
+            Console.WriteLine(response);
+
+            return response.IsSuccessStatusCode;
         }
     }
 }

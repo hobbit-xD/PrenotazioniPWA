@@ -9,5 +9,10 @@ namespace prenotameBot.Models
         public string? NumeroPrenotazione { get; set; }
         public bool IsConfermata { get; set; }
 
+        public override string ToString()
+        {
+            return $"{NomePrenotazione}\t{InizioPrenotazione.ToString("dd/MM/yyyy")}\t{InizioPrenotazione.ToShortTimeString()}\t{FinePrenotazione.ToShortTimeString()}";
+        }
+
     }
 }

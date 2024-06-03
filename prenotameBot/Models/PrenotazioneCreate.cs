@@ -5,6 +5,7 @@ namespace prenotameBot.Models
         public string? NomePrenotazione { get; set; } //il punto di domanda vuol dire che e opzionale
         public DateTime InizioPrenotazione { get; set; }
         public DateTime FinePrenotazione { get; set; }
+        public long? TelegramUserId { get; set; }
 
 
     }
